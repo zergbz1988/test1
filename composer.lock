@@ -4,9 +4,92 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1a339055eda9633126c79849a3d46d0",
-    "content-hash": "a0091993e4e751142629488a2d96b1da",
+    "hash": "a522083e7f9f9a80ca47fe77d8fd7052",
+    "content-hash": "313e8c5ebefe921d5652a3a6c5952395",
     "packages": [
+        {
+            "name": "bower-asset/angular",
+            "version": "v1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular.git",
+                "reference": "3828060389c83384b0a162eea82b21f183aa060c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular/zipball/3828060389c83384b0a162eea82b21f183aa060c",
+                "reference": "3828060389c83384b0a162eea82b21f183aa060c",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./angular.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-animate",
+            "version": "v1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular/bower-angular-animate.git",
+                "reference": "49a93460f1960dc3936173f1f2d026f89bfef90c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular/bower-angular-animate/zipball/49a93460f1960dc3936173f1f2d026f89bfef90c",
+                "reference": "49a93460f1960dc3936173f1f2d026f89bfef90c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": "1.6.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./angular-animate.js",
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/angular-bootstrap",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/angular-ui/bootstrap-bower.git",
+                "reference": "752d6a79f500391a7efb06d80f37405c920a6f2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angular-ui/bootstrap-bower/zipball/752d6a79f500391a7efb06d80f37405c920a6f2b",
+                "reference": "752d6a79f500391a7efb06d80f37405c920a6f2b",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.4.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./ui-bootstrap-tpls.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Native AngularJS (Angular) directives for Bootstrap.",
+            "keywords": [
+                "angular",
+                "angular-ui",
+                "bootstrap"
+            ]
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -366,12 +449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "aa8797d5011736f29be91058f12767b40390080e"
+                "reference": "75d29c59a6ed15e57568dc512eff0810b0e79a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/aa8797d5011736f29be91058f12767b40390080e",
-                "reference": "aa8797d5011736f29be91058f12767b40390080e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/75d29c59a6ed15e57568dc512eff0810b0e79a8d",
+                "reference": "75d29c59a6ed15e57568dc512eff0810b0e79a8d",
                 "shasum": ""
             },
             "require": {
@@ -458,7 +541,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-01-31 13:25:00"
+            "time": "2017-02-01 16:51:32"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
