@@ -11,6 +11,9 @@ controllers.controller('UserController', ['$scope', 'UserService',
             }
         }, function (err) {
             console.log(err);
-        })
+        });
+        $scope.changeItem = function(id){
+            UserService.put(id, $scope.users[id]);
+        }
     }
 ]);

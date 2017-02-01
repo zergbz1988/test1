@@ -10,7 +10,6 @@ usersApp.service('UserService', function($http) {
         return $http.post('/users', data);
     };
     this.put = function (id, data) {
-        console.log('dfgdfg');
         return $http.put('/users/' + id, data);
     };
     this.delete = function (id) {

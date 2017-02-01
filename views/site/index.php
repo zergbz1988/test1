@@ -16,11 +16,10 @@ $this->title = 'Users';
                 </thead>
                 <tbody>
                 <tr data-ng-repeat="user in users">
-                    <td><input type="text" ng-model="user.fio" data-ng-change="put(user.id, user.fio)"></td>
-                    <td><input type="text" ng-model="user.phone" data-ng-change="put(user.id, user.phone)"></td>
+                    <td><input type="text" ng-model="user.fio" data-ng-change="changeItem(user.id)"></td>
+                    <td><input type="text" ng-model="user.phone" data-ng-change="changeItem(user.id)"></td>
                     <td>
-                        <select data-ng-model="user.country.id">
-                            <option data-ng-repeat="country in user.countries" value="country.id">{{country.title}}</option>
+                        <select data-ng-model="user.country" data-ng-options="country as country.title for country in user.countries track by country.id">
                         </select>
                     </td>
                 </tr>
