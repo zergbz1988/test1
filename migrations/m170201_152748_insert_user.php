@@ -9,25 +9,25 @@ class m170201_152748_insert_user extends Migration
         $this->insert('{{%user}}',
             [
                 'fio' => 'Vladimir Vladimirovich Putin',
-                'phone' => '7900954679',
+                'phone' => '79009546799',
                 'country_id' => 1
             ]);
         $this->insert('{{%user}}',
             [
                 'fio' => 'Pyotr Alekseevich Poroshenko',
-                'phone' => '3800954679',
+                'phone' => '38009546797',
                 'country_id' => 2
             ]);
         $this->insert('{{%user}}',
             [
                 'fio' => 'Donald John Trump',
-                'phone' => '1400954679',
+                'phone' => '14009546759',
                 'country_id' => 3
             ]);
         $this->insert('{{%user}}',
             [
                 'fio' => 'Theresa Mary May',
-                'phone' => '4400954679',
+                'phone' => '44009546979',
                 'country_id' => 4
             ]);
     }

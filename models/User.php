@@ -33,6 +33,10 @@ class User extends \yii\db\ActiveRecord
             [['fio', 'country_id'], 'required'],
             [['country_id'], 'integer'],
             [['fio'], 'string', 'max' => 60],
+            ['phone', 'filter', 'filter' => function ($value) {
+                return str_replace(['(', ')', ' ', '-', '+'], '', $value);
+            }],
+            [['phone'], 'string', 'min' => 11],
             [['phone'], 'string', 'max' => 11],
             [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => Country::className(), 'targetAttribute' => ['country_id' => 'id']],
         ];

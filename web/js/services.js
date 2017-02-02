@@ -2,15 +2,26 @@
 
 var usersApp = angular.module('usersApp');
 
-usersApp.service('UserService', function($http) {
-    this.get = function() {
-        return $http.get('/users');
+usersApp.service('UserService', function ($http) {
+    this.get = function (filter, sort) {
+        return $http.get('/users', {
+            params: {
+                "UserSearch[fio]": filter,
+                "sort": sort
+            }
+        });
     };
-    this.post = function (data) {
+    this.create = function (data) {
         return $http.post('/users', data);
     };
-    this.put = function (id, data) {
-        return $http.put('/users/' + id, data);
+    this.update = function (id, fio, phone, country_id) {
+        return $http.put('/users/' + id, {
+            User: {
+                fio: fio,
+                phone: phone,
+                country_id: country_id
+            }
+        });
     };
     this.delete = function (id) {
         return $http.delete('/users/' + id);

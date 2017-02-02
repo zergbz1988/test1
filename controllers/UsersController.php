@@ -3,13 +3,14 @@
 namespace app\controllers;
 
 use app\models\User;
-use yii\data\ActiveDataProvider;
-use yii\db\ActiveQuery;
+use yii;
+use app\models\search\UserSearch;
 use yii\rest\ActiveController;
 use yii\helpers\ArrayHelper;
 use yii\filters\Cors;
 use yii\filters\ContentNegotiator;
 use yii\web\Response;
+use HttpRequestMethodException;
 
 class UsersController extends ActiveController
 {
@@ -54,12 +55,32 @@ class UsersController extends ActiveController
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
                 'prepareDataProvider' => function ($action) {
-                    $query = User::find();
-                    return new ActiveDataProvider([
-                        'query' => $query,
-                    ]);
+                    $searchModel = new UserSearch();
+                    return $searchModel->search(Yii::$app->request->queryParams);
                 }
-            ]
+            ],
         ];
+    }
+
+    public function actionUpdate($id)
+    {
+        if (!Yii::$app->request->isPut) {
+            return new HttpRequestMethodException();
+        }
+
+        /** @var User $user */
+        $user = User::findOne($id);
+
+        if ($user->load(Yii::$app->request->post()) && $user->save()) {
+            return [
+                'status' => 'success',
+                'message' => 'User was successfully edited!'
+            ];
+        } else {
+            return [
+                'status' => 'error',
+                'message' => implode(', ', $user->getFirstErrors())
+            ];
+        }
     }
 }
